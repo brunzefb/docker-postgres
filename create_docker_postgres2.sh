@@ -1,5 +1,5 @@
 #!/bin/bash 
-
+docker create volume postgres
 
 if [ -z "${POSTGRES_PASSWORD}" ]; then
   echo "Error: POSTGRES_PASSWORD is not set"
@@ -8,7 +8,7 @@ fi
 
 docker run \
   --name pgsql-dev \
-   -v ${PWD}/db:/var/lib/postgresql/data \
+   -v postgres:/var/lib/postgresql/data \
   --rm \
   --detach \
   -e POSTGRES_PASSWORD=${POSTGRES_PASSWORD} \
