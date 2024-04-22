@@ -14,3 +14,6 @@ docker run \
   -e POSTGRES_PASSWORD=${POSTGRES_PASSWORD} \
   -p 5432:5432 \
  postgres:16-bullseye
+
+ string connString = \
+  $"Host=db;Username=postgres;Password={pw};Database=postgres"

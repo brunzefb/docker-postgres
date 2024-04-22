@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  pgsql-dev:
+    image: postgres:16-bullseye
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRESS_PASS}
+    restart: always
+
+volumes:
+  postgres:
