@@ -6,7 +6,7 @@ class Program
     static void Main()
     {
         var connString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
-
+        Console.WriteLine($"Connection string: {connString}");
         using var conn = new NpgsqlConnection(connString);
         conn.Open();
 

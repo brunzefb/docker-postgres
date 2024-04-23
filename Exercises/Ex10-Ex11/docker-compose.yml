@@ -15,13 +15,14 @@ services:
       retries: 3
 
   dbclient:
-    image: proget.netadds.net/dockerimages/dbclient:v1
+    image: proget.netadds.net/dockerimages/dbclient:v2
     environment:
-      - CONNECTION_STRING=${CONNECTION_STRING}
+      - CONNECTION_STRING=Host=pgsql-dev;Username=postgres;Password=${POSTGRESS_PASS};Database=test
     depends_on:
       pgsql-dev:
         condition: service_healthy
     command: ["/app/dbclient"]
+
 
 volumes:
   postgres:
