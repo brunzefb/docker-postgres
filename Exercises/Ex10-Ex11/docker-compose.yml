@@ -23,6 +23,5 @@ services:
         condition: service_healthy
     command: ["/app/dbclient"]
 
-
 volumes:
   postgres:
